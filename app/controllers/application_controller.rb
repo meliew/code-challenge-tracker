@@ -21,5 +21,6 @@ class ApplicationController < Sinatra::Base
       if session[:user_id]
       end
     end
+  end
 
 end
