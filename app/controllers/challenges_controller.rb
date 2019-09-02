@@ -8,4 +8,15 @@ class ChallengesController < ApplicationController
             redirect '/login'
         end
     end
+
+    post 'challenges' do 
+        if params[:content] != ""
+            @challenge = Challenge.new(params)
+            @challenge.user = current_user
+            @challenge.save
+            redirect "/challenges/#{@challenge.id}"
+        else
+            redirect "challenges/new"
+    end
+  end
 end
