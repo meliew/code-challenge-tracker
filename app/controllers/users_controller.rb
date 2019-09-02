@@ -22,13 +22,13 @@ class UsersController < ApplicationController
         end
     end
 
-get '/login' do 
-    if !logged_in?
+    get '/login' do 
+        if !logged_in?
         erb :'/users/login'
-    else 
-        redirect '/challenges/index'
+        else 
+            redirect '/challenges/index'
+        end
     end
-end
 
     post '/login' do 
         @user = User.find_by(:username => params[:username])
@@ -39,7 +39,13 @@ end
             redirect '/login'
         end 
     end 
-        
+    
+    get '/logout' do 
+        if logged_in? 
+            session.destroy 
+        end
+            redirect '/login'
+            
 
 
 end
