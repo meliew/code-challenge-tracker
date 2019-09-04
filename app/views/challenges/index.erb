@@ -1,0 +1,9 @@
+<h1>Challenges Index</h1>
+
+<h3>Welcome, <%= current_user.username %></h3>
+
+<ul>
+<% @challenges.each do |challenge| %>
+    <li><%= challenge.content %></li>
+    <% end %>
+    </ul>
