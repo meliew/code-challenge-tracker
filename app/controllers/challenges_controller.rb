@@ -50,4 +50,26 @@ class ChallengesController < ApplicationController
         end
     end
 
+        patch '/challenges/:id' do 
+            @challenge = Challenge.find_by_id(params[:id])
+            if params[:content] !+ ""
+                @challenge.update(content: params[:content])
+                redirect "/challenges/#{@challenge.id}"
+            else
+                redirect "challenges/#{@challenge.id}/edit"
+            end
+        end
+
+        delete "challenges/:id/delete" do
+            if logged_in?
+                @challenge = Challenge.find_by_id(params[:id])
+                if @challenge && @challenge.user == current_user
+                    @challenge.delete
+                    redirect "/challenges"
+                end
+            else 
+                redirect "/login"
+            end
+        end
+
 end
