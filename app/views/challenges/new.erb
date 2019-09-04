@@ -1,0 +1,13 @@
+<% if logged_in? %>
+<%= @error %> 
+<form action='/challenges' method='POST'>
+    <h1>Create Your Challenge:</h1>
+    <input type='textblock' name='content' placeholder='Describe the challenge here...'>
+    <input type='submit' value='Save your challenge'>
+
+    </form>
+
+    <% else %>
+    <h3> You must be logged in to create a challenge</h3>
+    <% end %>
+    
