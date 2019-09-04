@@ -52,7 +52,7 @@ class ChallengesController < ApplicationController
 
         patch '/challenges/:id' do 
             @challenge = Challenge.find_by_id(params[:id])
-            if params[:content] !+ ""
+            if params[:content] != ""
                 @challenge.update(content: params[:content])
                 redirect "/challenges/#{@challenge.id}"
             else

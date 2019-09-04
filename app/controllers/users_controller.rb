@@ -45,6 +45,7 @@ class UsersController < ApplicationController
             session.destroy 
         end
             redirect '/login'
+    end
             
 
 
