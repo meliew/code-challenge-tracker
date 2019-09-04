@@ -17,6 +17,37 @@ class ChallengesController < ApplicationController
             redirect "/challenges/#{@challenge.id}"
         else
             redirect "challenges/new"
+        end
     end
-  end
+
+    get '/challenges/new' do 
+        if !logged_in?
+            redirect '/login'
+        else
+            erb :'challenges/new'
+        end
+    end
+
+    get '/challenges/:id' do 
+        if logged_in?
+            @challenge = Challenge.find_by_id(params[:id])
+            erb :'/challenges/show'
+        else
+            redirect '/login'
+        end
+    end
+
+    get '/challenges/:id/edit' do 
+        if logged_in?
+            @challenge = Challenge.find_by_id(params[:id])
+            if @challenge && @challenge.user == current_user
+                erb :'challenges/edit'
+            else
+                redirect '/challenges'
+            end
+        else
+            redirect '/login'
+        end
+    end
+
 end
