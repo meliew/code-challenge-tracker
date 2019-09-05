@@ -3,7 +3,7 @@ class ChallengesController < ApplicationController
     get '/challenges' do 
         if logged_in? 
             @challenges = Challenge.all
-            erb :'challenges/index'
+            erb :'challenges/challenges'
         else
             redirect '/login'
         end
