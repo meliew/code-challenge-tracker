@@ -1,0 +1,13 @@
+<% if logged_in? %>
+    <%= @error %>
+    <form action="/challenges/<%= @challenge.id %>" method="POST">
+        <input type="hidden" name="_method" value="patch">
+        <h3>Edit your challenge:</h3>
+        <input type="text" name="content" value="<%= @challenge.content %>"><br>
+        <input type="submit" value="submit" name="submit">
+
+        </form>
+
+        <% else %>
+            <h2>You must be logged in to edit challenges</h2>
+        <% end %>
