@@ -1,12 +1,5 @@
 class UsersController < ApplicationController
 
-    #sign-up 
-    #form - with fields for username, email, password 
-    #log-in 
-    #create challenge 
-    #edit challenge 
-    #log-out 
-
     get '/signup' do 
         erb :'/users/signup'
     end
@@ -38,7 +31,11 @@ class UsersController < ApplicationController
         else 
             redirect '/login'
         end 
-    end 
+    end
+    
+    get "users/:slug" do 
+        @user = User.find_by_slug(params[:slug])
+        erb :'users/show'
     
     get '/logout' do 
         if logged_in? 
