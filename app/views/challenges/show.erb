@@ -1,9 +1,12 @@
 <h1>Review your challenge</h1>
 
+<p><%= @challenge.title %></p>
 <p><%= @challenge.content %></p>
 
-<a href="/challenges/<%= @challenge.id %>/edit">Edit Challange</a>
-<form method="POST" action="/challenges/<%= @challenge.id %>/delete">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Challenge">
+<a href="/challenges/<%= @challenge.id %>/edit">Edit Challenge</a>
     
+
+    <form action="/challenges/<%= @challenge.id %>/delete" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="delete">
+  </form>

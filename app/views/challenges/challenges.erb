@@ -3,6 +3,7 @@
 
 <% Challenge.all.each do |challenge| %>
     <ol>
+    <li><h1> <%= challenge.title %></h1></li>
     <li> <%= challenge.content %></li>
     <% end %>
     

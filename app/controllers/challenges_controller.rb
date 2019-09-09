@@ -63,16 +63,14 @@ class ChallengesController < ApplicationController
             end
         end
 
-        delete "challenges/:id/delete" do
-            if logged_in?
+
+        delete "/challenges/:id/delete" do
                 @challenge = Challenge.find_by_id(params[:id])
                 if @challenge && @challenge.user == current_user
                     @challenge.delete
                     redirect "/challenges"
                 end
-            else 
-                redirect "/login"
-            end
+            
         end
 
 end
