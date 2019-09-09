@@ -3,7 +3,7 @@
     <form action="/challenges/<%= @challenge.id %>" method="POST">
         <input type="hidden" name="_method" value="patch">
         <h3>Edit your challenge:</h3>
-        <input type="text" name="title" value="<%= @challenge.name %>"><br>
+        <input type="text" name="title" value="<%= @challenge.title %>"><br>
         <input type="text" name="content" value="<%= @challenge.content %>"><br>
         <input type="submit" value="submit" name="submit">
 
