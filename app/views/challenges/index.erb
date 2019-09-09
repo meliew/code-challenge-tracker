@@ -3,7 +3,7 @@
 <h3>Welcome, <%= current_user.username %></h3>
 
 <ul>
-<% @challenges.each do |challenge| %>
+<% current_user.challenges.each do |challenge| %>
     <li><%= challenge.title %></li>
     <li><%= challenge.content %></li>
     <% end %>
