@@ -9,14 +9,16 @@ class ChallengesController < ApplicationController
         end
     end
 
-    post 'challenges' do 
+  
+
+    post '/challenges' do 
         if params[:content] != ""
             @challenge = Challenge.new(params)
             @challenge.user = current_user
             @challenge.save
             redirect "/challenges/#{@challenge.id}"
         else
-            redirect "challenges/new"
+            redirect "/challenges/new"
         end
     end
 
@@ -27,6 +29,7 @@ class ChallengesController < ApplicationController
             erb :'challenges/new'
         end
     end
+   
 
     get '/challenges/:id' do 
         if logged_in?
