@@ -2,9 +2,11 @@
 
 <h3>Welcome, <%= current_user.username %></h3>
 
-<ul>
-<% current_user.challenges.each do |challenge| %>
-    <li><%= challenge.title %></li>
+<ol>
+<% current_user.challenges.each.with_index do |challenge, index| %>
+    
+    <li><h3><%= index + 1 %>. <%= challenge.title %></h3></li>
     <li><%= challenge.content %></li>
-    <% end %>
-    </ul>
+    <% end %>    
+    </ol>
+
