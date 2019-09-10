@@ -1,4 +1,5 @@
-class User < ActiveRecord::Base 
+class User < ActiveRecord::Base
+    validates :username, uniqueness: true 
     has_secure_password
     has_many :challenges
     
