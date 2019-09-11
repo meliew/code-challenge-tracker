@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do 
-        if params[:username] != "" && params[:email] != "" && params[:passwprd] != ""
+        if params[:username] != "" && params[:email] != "" && params[:password] != ""
             @user = User.new(params)
             @user.save
             session[:user_id] = @user.id 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
         if !logged_in?
         erb :'/users/login'
         else 
-            redirect '/challenges/index'
+            redirect '/challenges'
         end
     end
 

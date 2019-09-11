@@ -4,6 +4,7 @@ class ApplicationController < Sinatra::Base
 
   configure do
     enable :sessions
+    register Sinatra::Flash
     set :session_secret, "secret"
     set :public_folder, 'public'
     set :views, 'app/views'
@@ -15,7 +16,7 @@ class ApplicationController < Sinatra::Base
 
   helpers do
     def logged_in?
-      !!session[:user_id]
+     !!session[:user_id]
     end
 
     def current_user 

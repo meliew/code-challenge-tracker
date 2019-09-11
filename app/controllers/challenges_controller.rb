@@ -2,7 +2,7 @@ class ChallengesController < ApplicationController
     
     get '/challenges' do
         if logged_in? 
-            @challenges = Challenge.all
+            @challenges = current_user.challenges
             erb :'challenges/index'
         else
             redirect '/login'
