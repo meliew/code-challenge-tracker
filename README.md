@@ -48,7 +48,7 @@ All info in the MysteryCLI has been lovingly scraped from the Goodreads website.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/'meliew'/code_challenge_tracker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/'meliew'/code-challenge-tracker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
