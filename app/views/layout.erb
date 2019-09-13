@@ -15,8 +15,13 @@
   </head>
   <body>
     <div class="wrapper">
+
+      <% if flash[:error]%>
+        <p>Oops the following error(s) have occurred</p>
+        <p><%= flash[:error]%></p>
+      <% end %>
     
-        <%= yield %>
+      <%= yield %>
 
       <footer class="branding">
         <small>&copy; 2019 <strong>CodeChallengeTracker</strong></small>

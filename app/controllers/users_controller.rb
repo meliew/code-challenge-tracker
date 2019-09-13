@@ -12,8 +12,13 @@ class UsersController < ApplicationController
         if params[:username] != "" && params[:email] != "" && params[:password] != ""
             @user = User.new(params)
             @user.save
-            session[:user_id] = @user.id 
-            redirect '/challenges'
+            if @user.valid?
+                session[:user_id] = @user.id 
+                redirect '/challenges'
+            else
+                flash[:error] = @user.errors.full_messages.to_sentence
+                redirect '/signup'
+            end
         else
             redirect '/signup'
         end

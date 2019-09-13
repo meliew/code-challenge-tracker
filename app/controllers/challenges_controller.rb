@@ -5,6 +5,7 @@ class ChallengesController < ApplicationController
             @challenges = current_user.challenges
             erb :'challenges/index'
         else
+            flash[:error] = "You must log in to see your challenges."
             redirect '/login'
         end
     end
