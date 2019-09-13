@@ -10,6 +10,10 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
+  not_found do
+    erb :not_here
+  end
+
   get "/" do
     erb :index
   end
