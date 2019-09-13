@@ -3,12 +3,12 @@
     <form action="/challenges/<%= @challenge.id %>" method="POST">
         <input type="hidden" name="_method" value="patch">
         <h3>Edit your challenge:</h3>
-        <input type="text" name="title" value="<%= @challenge.title %>"><br>
-        <input type="text" name="content" value="<%= @challenge.content %>"><br>
-        <input type="submit" value="submit" name="submit">
+        <input type="text" name="title" value="<%= @challenge.title %>">
+        <textarea name="content"><%= @challenge.content %></textarea>
+        <input class="style_button" type="submit" value="submit" name="submit">
 
-        </form>
+    </form>
 
-        <% else %>
-            <h2>You must be logged in to edit challenges</h2>
-        <% end %>
+<% else %>
+    <h2>You must be logged in to edit challenges</h2>
+<% end %>
