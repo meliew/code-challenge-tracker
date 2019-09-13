@@ -32,11 +32,13 @@ class ChallengesController < ApplicationController
    
 
     get '/challenges/:id' do 
-        if logged_in?
-            @challenge = Challenge.find_by_id(params[:id])
+        @challenge = Challenge.find_by(:id => params[:id])
+        if !logged_in?
+            redirect '/login'
+        elsif @challenge 
             erb :'/challenges/show'
         else
-            redirect '/login'
+            not_found
         end
     end
 
