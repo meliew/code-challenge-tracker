@@ -30,7 +30,6 @@ class ChallengesController < ApplicationController
         end
     end
    
-
     get '/challenges/:id' do 
         @challenge = Challenge.find_by(:id => params[:id])
         if !logged_in?
