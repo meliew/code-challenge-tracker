@@ -1,0 +1,12 @@
+<h1>Hello <%=@user.username></h1>
+
+<% @challenges.each do |challenge| %>
+    <% if challenge.user_id == @user.id %>
+    <%= challenge.title %>
+    <% end %>
+<% challenge.updates.each do |update| %>
+    <%= update.log_date %>
+    <%= update.log_day %>
+    <%= update.log %>
+
+    <% end %>

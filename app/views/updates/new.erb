@@ -1,0 +1,15 @@
+<% if logged_in? %>
+
+    <form action='/updates/new' method='post'>
+    <h1> Create your challenge update </h1>
+    <input type='date' name='log_date'>
+    <input type='text' name='log' placeholder='Talk about your update here...'
+    <input type='submit' value='save'>
+
+<% else %>
+    <h3> You must be logged in to create an update </h3>
+<% end %>
+
+
+
+</form>
