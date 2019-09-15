@@ -71,6 +71,8 @@ class ChallengesController < ApplicationController
                 if @challenge && @challenge.user == current_user
                     @challenge.delete
                     redirect "/challenges"
+                else
+                    redirect '/challenges'
                 end
             
         end
