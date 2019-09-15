@@ -98,11 +98,17 @@
   }
 
 
-  input[type=text] {
+  input[type=text], input[name=password] {
     line-height: 1.5em;
+    font-size: 1em;display: block;
+    border: 1px solid #ccc;
+    padding: 4px;
+    margin-top: 2px;
+    margin-bottom: 6px;
+
   }
 
-  textarea, input[type=text] {
+  textarea {
     width: calc(100% - 10px);
     display: block;
     border: 1px solid #ccc;
@@ -110,11 +116,12 @@
     margin-top: 2px;
     margin-bottom: 6px;
     font-size: 1em;
-  }
-
-  textarea {
     min-height: 200px;
   }
+
+  /* textarea {
+    min-height: 200px;
+  } */
 
   input[type=text], textarea, input[type=button],input[type=submit], button {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
