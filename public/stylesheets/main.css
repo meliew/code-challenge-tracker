@@ -100,7 +100,7 @@
 
   input[type=text], input[name=password] {
     line-height: 1.5em;
-    font-size: 1em;display: block;
+    font-size: 1em; display: block;
     border: 1px solid #ccc;
     padding: 4px;
     margin-top: 2px;
@@ -119,11 +119,7 @@
     min-height: 200px;
   }
 
-  /* textarea {
-    min-height: 200px;
-  } */
-
-  input[type=text], textarea, input[type=button],input[type=submit], button {
+  input[type=text], textarea, input[type=button],input[type=submit], input[name=password], button {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
     border-radius: 2px;
     font-family: sans-serif;
